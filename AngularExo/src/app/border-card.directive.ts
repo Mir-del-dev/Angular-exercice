@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[StudenrBorderCard]'
+  selector: '[StudentBorderCard]'
 })
 export class BorderCardDirective {
 
@@ -20,7 +20,7 @@ export class BorderCardDirective {
   }
   
     private setBorder(color: string){
-      let border='solid 4px'+color;
+      let border='solid 4px'+ color;
       this.el.nativeElement.style.border = border;
 
     }
