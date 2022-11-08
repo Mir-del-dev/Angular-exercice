@@ -1,8 +1,16 @@
 <h1> la liste des etudiants</h1>
 
-<p (click)="selectStudent(studentList[0])">{{studentList[0].name}}</p>
- <p>{{studentList[1].name}}</p> 
- <p>{{studentList[2].name}}</p> 
- <p>{{studentList[3].name}}</p> 
- <p>{{studentList[4].name}}</p> 
- <p>{{studentList[5].name}}</p>                   
+<input
+#boxInput
+(keyup)="selectOneStudent(boxInput.value)"
+type="number"
+/>
+
+<p *ngIf="StudentSelected">{{StudentSelected.name}}</p>
+<p *ngIf="!StudentSelected">pas détudiant</p>
+<p *ngFor="let student of StudentList">{{Student.name}}
+
+</p>
+
+
+                

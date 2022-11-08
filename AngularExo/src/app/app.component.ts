@@ -9,16 +9,29 @@ import { Student } from './Students';
   styles: []
 })
 export class AppComponent implements OnInit {
-  studentList: Student[] = STUDENTS;
+  StudentList: Student[] = STUDENTS;
+  studentSelected:Student|undefined;
 
   ngOnInit(): void {
-    console.table(this.studentList);
-    console.log(this.studentList[0].name);
+    console.table(this.StudentList);
   }
 
-  selectStudent = (studentName: Student) => {
-    console.log(` ${studentName}`);
+  selectOneStudent (StudentId: String) {
+  const student: Student|undefined = this.StudentList.find(
+    Student => Student.id == +StudentId
+  );
+  
+  if (student) {
+    console.log('vous avez cliqué sur létudiant ${Student.name}');
+     this.studentSelected = student;
   }
+  else{
+    console.log("létudiant nexiste pas");
+    this.studentSelected = student;
+  }
+
+  } 
 
 
 }
+
